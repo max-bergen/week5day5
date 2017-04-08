@@ -11,7 +11,8 @@ class playlist {
     this.name = name;
     this.tracks = [];
     this.totalDuration = 0;
-    this.overallRating = 0;
+    this.totalRating = 0;
+    this.totalTracks = 0;
   }
 }
 
@@ -33,6 +34,8 @@ function addPlaylist(library, playlist) {
 function addTrack(playlist, track) {
   playlist.tracks[playlist.tracks.length] = track;
   playlist.totalDuration += track.duration;
+  playlist.totalRating += track.rating;
+  playlist.totalTracks = playlist.tracks.length;
 }
 
 const library1 = new library('library1', 'Max');
